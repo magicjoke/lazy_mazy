@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Danger
+  - Ground
+  - Exit
+  - RespawnPoint
+  - JumpBooster
+  - Score
+  - StickyWall
+  - LiftUp
+  - Boost
+  - Blue_door
+  - Blue_door_light
+  - Crystal
+  - Crystal_base
+  - Crystal_finish
+  - MoveRightZone
+  - StopMoveRightZone
+  - Red_door
+  - Red_door_light
+  - Arrow
+  - LevelSelectController
+  - LevelFader
+  - ScreenShake
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

@@ -322,6 +322,7 @@
     <Compile Include="Assets\Scripts\Crystal\CrystalMover.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
     <Compile Include="Assets\Scripts\Fading\ObjectFading.cs" />
+    <Compile Include="Assets\Scripts\Fading\SignController.cs" />
     <Compile Include="Assets\Scripts\FireFly.cs" />
     <Compile Include="Assets\Scripts\FireFlyGlowing.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />

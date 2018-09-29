@@ -8,7 +8,6 @@ public class CrystalMover : MonoBehaviour {
     private GameObject crystalFinish;
     public bool isAlive = false;
     private bool transferDone = false;
-    public float crystalSpeed;
     private const float minDistance = 0.07f;
 
     public float startMoveTime = 2f;
@@ -25,12 +24,7 @@ public class CrystalMover : MonoBehaviour {
 	
 	void Update ()
     {
-
         float t = (Time.time - startTime) / duration;
-        //this.gameObject.transform.position = new Vector3(Mathf.SmoothStep(crystalFinish.transform.position.x, crystalFinish.transform.position, t), 0, 0);
-
-        //crystalSpeed = Mathf.Clamp01((Time.time - startMoveTime) / moveDuration);
-
         crystalBase = GameObject.FindGameObjectWithTag("Crystal_base");
         crystalFinish = GameObject.FindGameObjectWithTag("Crystal_finish");
 

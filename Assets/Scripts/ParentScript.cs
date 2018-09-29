@@ -8,5 +8,4 @@ public class ParentScript : MonoBehaviour {
     {
         Debug.Log("child collided");
     }
-
 }

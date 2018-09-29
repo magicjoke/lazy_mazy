@@ -11,7 +11,6 @@ public class CameraShake : MonoBehaviour{
         camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
     }
 
-
     public void CamShake()
     {
         int rand = Random.Range(0, 3);

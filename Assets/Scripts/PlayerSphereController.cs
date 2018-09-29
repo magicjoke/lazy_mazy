@@ -27,7 +27,6 @@ public class PlayerSphereController : MonoBehaviour {
 
     void Update()
     {
-
         float t = (Time.time - startTime) / duration;
 
         if (isAlive == true)
@@ -35,7 +34,6 @@ public class PlayerSphereController : MonoBehaviour {
             this.gameObject.transform.position = Vector3.Lerp(transform.position, respawn.transform.position, Mathf.SmoothStep(0f, 0.5f, t));
         }
 
-        //if((this.gameObject.transform.position - respawn.transform.position).sqrMagnitude <= minDistance * minDistance)
         if (this.gameObject.transform.position == respawn.transform.position)
         {
             Debug.Log("onPLACE");

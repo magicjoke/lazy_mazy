@@ -26,6 +26,9 @@ TagManager:
   - LevelSelectController
   - LevelFader
   - ScreenShake
+  - Canvas
+  - Sign
+  - SignText
   layers:
   - Default
   - TransparentFX

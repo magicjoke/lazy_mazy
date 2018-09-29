@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CrystalController : MonoBehaviour
 {
-
     public bool onPlace = false;
     public bool createdOnce = false;
     private bool sms = false;
@@ -32,23 +31,18 @@ public class CrystalController : MonoBehaviour
 
         blueDoor = GameObject.FindGameObjectWithTag("Blue_door");
         blueDoorLight = GameObject.FindGameObjectWithTag("Blue_door_light");
-
         redDoor = GameObject.FindGameObjectWithTag("Red_door");
         redDoorLight = GameObject.FindGameObjectWithTag("Red_door_light");
     }
 
     void Start()
     {
-        // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene();
-
-        // Retrieve the name of this scene.
         sceneName = currentScene.name;
     }
 
     void Update()
     {
-
         if (onPlace == true && sms == false)
         {
             Debug.Log("OnPlace=True");
@@ -85,7 +79,6 @@ public class CrystalController : MonoBehaviour
             Instantiate(crystal, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
             createdOnce = true;
         }
-
     }
 
     IEnumerator BlueLightPause()
@@ -104,6 +97,5 @@ public class CrystalController : MonoBehaviour
     {
         yield return new WaitForSeconds(blueColliderWaitTime);
         blueDoor.GetComponent<BoxCollider2D>().enabled = false;
-
     }
 }

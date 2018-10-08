@@ -29,6 +29,7 @@ TagManager:
   - Canvas
   - Sign
   - SignText
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -39,8 +40,8 @@ TagManager:
   - 
   - 
   - Ground
-  - 
-  - 
+  - Bullet
+  - Player
   - 
   - 
   - 

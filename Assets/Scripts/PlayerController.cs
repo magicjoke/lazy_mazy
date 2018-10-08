@@ -363,6 +363,7 @@ public class PlayerController : MonoBehaviour {
         deadFreeze = true;
         GetComponent<Animator>().Play("Death_1");
         yield return new WaitForSeconds(0.5f);
+        GetComponent<CapsuleCollider2D>().enabled = false;
         Instantiate(playerSphere, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
     }
 
@@ -372,6 +373,7 @@ public class PlayerController : MonoBehaviour {
         sphereOnRespawn = false;
         player.transform.position = new Vector3(respawn.transform.position.x, respawn.transform.position.y, respawn.transform.position.z);
         GetComponent<Animator>().Play("Respawn_1");
+        GetComponent<CapsuleCollider2D>().enabled = true;
         yield return new WaitForSeconds(0.7f);
         deadFreeze = false;
         canControl = true;

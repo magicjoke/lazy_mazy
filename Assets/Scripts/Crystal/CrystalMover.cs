@@ -35,6 +35,8 @@ public class CrystalMover : MonoBehaviour {
         if(transferDone == false && (this.gameObject.transform.position - crystalFinish.transform.position).sqrMagnitude <= minDistance * minDistance)
         {
             crystalBase.GetComponent<CrystalController>().onPlace = true;
+            crystalFinish.GetComponent<Animator>().Play("Crystal_onplace_anim_1");
+            this.GetComponent<SpriteRenderer>().enabled = false;
             transferDone = true;
             Debug.Log("Transfer...");
         }

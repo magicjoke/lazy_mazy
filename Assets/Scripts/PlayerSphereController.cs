@@ -44,5 +44,10 @@ public class PlayerSphereController : MonoBehaviour {
         }
     }
 
+    // - test - //
+    IEnumerator WaterMove()
+    {
+        yield return new WaitForSeconds(0.6f);
+    }
 
 }

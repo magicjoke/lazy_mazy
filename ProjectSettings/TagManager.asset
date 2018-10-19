@@ -30,6 +30,10 @@ TagManager:
   - Sign
   - SignText
   - Bullet
+  - JumpBoosterRight
+  - JumpBoosterLeft
+  - JumpBoosterDown
+  - Water
   layers:
   - Default
   - TransparentFX

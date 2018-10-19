@@ -12,18 +12,44 @@ public class BulletController : MonoBehaviour
     public bool shootLEFT;
     public bool shootRIGHT;
 
+
+    // -- TrailShiet -- //
+
+
+    public float timeBtwSpawns;
+    public float startTimeBtwSpawns;
+
+    public GameObject echo;
+
+    // -- EndTrailShiet -- //
+
+    public GameObject bulletParticle;
+
+
+
     void Start()
     {
-        //rb = bullet.GetComponent<Rigidbody2D>();
+        this.GetComponent<CircleCollider2D>().enabled = false;
+        StartCoroutine(activateCollision());
     }
 
     void Update()
     {
 
+        if(timeBtwSpawns <= 0)
+        {
+            GameObject instance = (GameObject)Instantiate(echo, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+            timeBtwSpawns = startTimeBtwSpawns;
+        }
+        else
+        {
+            timeBtwSpawns -= Time.deltaTime;
+        }
+
         if (shootUP == true)
         {
             this.GetComponent<Rigidbody2D>().velocity = new Vector3(0, thrust, 0);
-            //bullet.transform.position = new Vector2.up(0, 1);
         }
         if (shootDOWN == true)
         {
@@ -47,10 +73,20 @@ public class BulletController : MonoBehaviour
         if (other.gameObject.tag == "Ground")
         {
             Destroy(gameObject);
+            GameObject instance = (GameObject)Instantiate(bulletParticle, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
         }
         if (other.gameObject.tag == "Player")
         {
             Destroy(gameObject);
+            GameObject instance = (GameObject)Instantiate(bulletParticle, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
         }
+    }
+
+    IEnumerator activateCollision()
+    {
+        yield return new WaitForSeconds(0.4f);
+        this.GetComponent<CircleCollider2D>().enabled = true;
     }
 }

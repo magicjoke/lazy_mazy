@@ -64,9 +64,6 @@ public class PlayerController : MonoBehaviour {
     SpriteRenderer sr;
     BoxCollider2D boxCollider;
 
-    //public float rotationSpeed = 10;
-    //public bool rotatePlayer = false;
-
 
     void Awake () {
 
@@ -259,6 +256,12 @@ public class PlayerController : MonoBehaviour {
             StartCoroutine(CharacterDeathTwo());
         }
 
+        if(stickJump == true)
+        {
+            GetComponent<Animator>().Play("Sticky_1");
+            Debug.Log("StickyJumpTrue");
+        }
+
         //if (player.GetComponent<Rigidbody2D>().velocity.y < -0.3 && isGrounded == false)
         //{
         //    GetComponent<Animator>().Play("Falling_1");
@@ -295,20 +298,51 @@ public class PlayerController : MonoBehaviour {
         //    previousHeight = currentHeight;
     }
 
+
     void OnTriggerEnter2D(Collider2D other)
     {
+
         if (other.gameObject.tag == "Danger" && canDie == true)
         {
             canDie = false;
             shake.CamShake();
             StartCoroutine(CharacterDeath());
         }
+        if (other.gameObject.tag == "Water" && canDie == true)
+        {
+            canDie = false;
+            //shake.CamShake();
+            StartCoroutine(CharacterWaterDeath());
+        }
         if (other.gameObject.tag == "JumpBooster")
         {
             rb.velocity = new Vector2(0, 0);
             rb.AddForce(Vector2.up * 400);
         }
-        if(other.gameObject.tag == "Score")
+        if (other.gameObject.tag == "JumpBoosterDown")
+        {
+            rb.velocity = new Vector2(0, 0);
+            rb.AddForce(Vector2.down * 400);
+        }
+        if (other.gameObject.tag == "JumpBoosterRight")
+        {
+            // rb.velocity = new Vector2(0, 0);
+            //rb.AddForce(0, 200, 0);
+            rb.velocity = new Vector2(0, -1);
+            rb.AddRelativeForce(Vector2.right * 2000, ForceMode2D.Force);
+            //rb.AddForce(Vector2.right * 2000, ForceMode2D.Force);
+            Debug.Log("force");
+
+            //curSpeed = Speed;
+            //rb.add
+
+        }
+        if (other.gameObject.tag == "JumpBoosterLeft")
+        {
+           // rb.velocity = new Vector2(0, 0);
+            rb.AddForce(Vector2.left * 2000);
+        }
+        if (other.gameObject.tag == "Score")
         {
             Destroy(other.gameObject);
             score++;
@@ -347,6 +381,13 @@ public class PlayerController : MonoBehaviour {
             canMove = false;
             rb.velocity = new Vector2(0, 0);
             isGrounded = true;
+            GetComponent<Animator>().Play("Sticky_1");
+        }
+        if (collision.gameObject.tag == "Danger" && canDie == true)
+        {
+            canDie = false;
+            shake.CamShake();
+            StartCoroutine(CharacterDeath());
         }
     }
     
@@ -362,6 +403,16 @@ public class PlayerController : MonoBehaviour {
         canControl = false;
         deadFreeze = true;
         GetComponent<Animator>().Play("Death_1");
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        Instantiate(playerSphere, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+    }
+
+    IEnumerator CharacterWaterDeath()
+    {
+        canControl = false;
+        deadFreeze = true;
+        GetComponent<Animator>().Play("Water_death_1");
         yield return new WaitForSeconds(0.5f);
         GetComponent<CapsuleCollider2D>().enabled = false;
         Instantiate(playerSphere, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);

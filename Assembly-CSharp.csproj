@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ChildScript.cs" />
+    <Compile Include="Assets\Scripts\CrushJumpBlock.cs" />
     <Compile Include="Assets\Scripts\Crystal\CrystalController.cs" />
     <Compile Include="Assets\Scripts\Crystal\CrystalMover.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Assets\Scripts\Fading\SignController.cs" />
     <Compile Include="Assets\Scripts\FireFly.cs" />
     <Compile Include="Assets\Scripts\FireFlyGlowing.cs" />
+    <Compile Include="Assets\Scripts\GhostBlock\GhostBlockController.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\MainMenu\LevelSelectController.cs" />
     <Compile Include="Assets\Scripts\MainMenu\LoadOnClick.cs" />

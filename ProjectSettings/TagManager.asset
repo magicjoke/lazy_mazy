@@ -34,6 +34,7 @@ TagManager:
   - JumpBoosterLeft
   - JumpBoosterDown
   - Water
+  - CrushJump
   layers:
   - Default
   - TransparentFX

@@ -54,7 +54,10 @@ public class PlayerController : MonoBehaviour {
 
     public bool stickJump;
 
+    //--test--//
 
+    //float horizontalVelocity = rigidbody2d.velocity.x;
+    public float verticalVelocity;
 
 
     public int score;
@@ -156,6 +159,8 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update () {
+
+        verticalVelocity = rb.velocity.y;
 
         ChangeDirection();
         respawn = GameObject.FindGameObjectWithTag("RespawnPoint");
@@ -371,6 +376,12 @@ public class PlayerController : MonoBehaviour {
             rb.velocity = new Vector2(0, rb.velocity.y);
             Debug.Log("StopMoveRightZone");
         }
+
+        //if (other.gameObject.tag == "CrushJump" && verticalVelocity < -3)
+        //{
+        //    Debug.Log("JumpCrush");
+
+        //}
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -389,8 +400,22 @@ public class PlayerController : MonoBehaviour {
             shake.CamShake();
             StartCoroutine(CharacterDeath());
         }
+        //if (collision.gameObject.tag == "CrushJump" && verticalVelocity < -3)
+        //{
+        //    Debug.Log("JumpCrush");
+
+        //}
     }
-    
+
+    //void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if(collision.gameObject.tag == "CrushJump")
+    //    {
+    //        Debug.Log("CollExit");
+
+    //    }
+    //}
+
     IEnumerator ChangeLevel()
     {
         levelFader.GetComponent<Animator>().Play("Level_fade_1");

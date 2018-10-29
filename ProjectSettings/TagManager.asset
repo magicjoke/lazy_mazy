@@ -35,6 +35,8 @@ TagManager:
   - JumpBoosterDown
   - Water
   - CrushJump
+  - MoveLeftZone
+  - StopMoveZone
   layers:
   - Default
   - TransparentFX

@@ -7,12 +7,12 @@ public class LevelManager : MonoBehaviour {
 
     public string levelToLoad;
     private GameObject player;
-    private GameObject levelExit;
+    //private GameObject levelExit;
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        levelExit = GameObject.FindGameObjectWithTag("Exit");
+        //levelExit = GameObject.FindGameObjectWithTag("Exit");
 
     }
 

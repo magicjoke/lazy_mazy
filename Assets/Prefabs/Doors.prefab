@@ -239,8 +239,8 @@ GameObject:
   - component: {fileID: 8084744342262680028}
   - component: {fileID: 8140676725977150854}
   m_Layer: 0
-  m_Name: StopMoveRightZone (1)
-  m_TagString: StopMoveRightZone
+  m_Name: StopMoveZone (1)
+  m_TagString: StopMoveZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -663,8 +663,8 @@ GameObject:
   - component: {fileID: 8084840491062966220}
   - component: {fileID: 8141338873753771278}
   m_Layer: 0
-  m_Name: StopMoveRightZone
-  m_TagString: StopMoveRightZone
+  m_Name: StopMoveZone
+  m_TagString: StopMoveZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

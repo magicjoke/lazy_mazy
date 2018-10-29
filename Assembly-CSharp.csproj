@@ -67,6 +67,8 @@
     <Compile Include="Assets\Scripts\Crystal\CrystalController.cs" />
     <Compile Include="Assets\Scripts\Crystal\CrystalMover.cs" />
     <Compile Include="Assets\Scripts\DontDestroy.cs" />
+    <Compile Include="Assets\Scripts\DoorBlock\DoorBlockActivator.cs" />
+    <Compile Include="Assets\Scripts\DoorBlock\DoorBlockController.cs" />
     <Compile Include="Assets\Scripts\Fading\ObjectFading.cs" />
     <Compile Include="Assets\Scripts\Fading\SignController.cs" />
     <Compile Include="Assets\Scripts\FireFly.cs" />
@@ -81,6 +83,7 @@
     <Compile Include="Assets\Scripts\PlayerSphereController.cs" />
     <Compile Include="Assets\Scripts\ShootBlock\BulletController.cs" />
     <Compile Include="Assets\Scripts\ShootBlock\ShootingBlock.cs" />
+    <Compile Include="Assets\Scripts\TeleportBlock\TelepotBlockController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Unity/Unity 2018/Projects/Lazy_Mazy_2018.3/lazy_mazy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

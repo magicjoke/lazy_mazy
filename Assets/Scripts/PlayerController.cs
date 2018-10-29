@@ -56,6 +56,8 @@ public class PlayerController : MonoBehaviour {
 
     //--test--//
 
+    public bool startMoveSide;
+
     //float horizontalVelocity = rigidbody2d.velocity.x;
     public float verticalVelocity;
 
@@ -89,9 +91,18 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        canControl = false;
-        curSpeed = 2f;
-        rb.velocity = new Vector2(curSpeed, rb.velocity.y);
+        if(startMoveSide == true)
+        {
+            canControl = false;
+            curSpeed = 2f;
+            rb.velocity = new Vector2(curSpeed, rb.velocity.y);
+        }
+        if(startMoveSide == false)
+        {
+            canControl = false;
+            curSpeed = -2f;
+            rb.velocity = new Vector2(curSpeed, rb.velocity.y);
+        }
     }
 
     void ChangeDirection() //change sprite xy
@@ -366,8 +377,17 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("MoveRightZone");
             changeLevel = true;
         }
+        if (other.gameObject.tag == "MoveLeftZone")
+        {
+            crystalBase.GetComponent<CrystalController>().closeDoor = true;
+            canControl = false;
+            curSpeed = -2f;
+            rb.velocity = new Vector2(curSpeed, rb.velocity.y);
+            Debug.Log("MoveRightZone");
+            changeLevel = true;
+        }
 
-        if (other.gameObject.tag == "StopMoveRightZone" && castOnce == false)
+        if (other.gameObject.tag == "StopMoveZone" && castOnce == false)
         {
             castOnce = true;
             crystalBase.GetComponent<CrystalController>().activeRedDoor = true;

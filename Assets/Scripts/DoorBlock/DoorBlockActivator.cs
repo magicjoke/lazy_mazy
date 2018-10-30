@@ -68,6 +68,8 @@ public class DoorBlockActivator : MonoBehaviour
         this.GetComponent<Animator>().Play("Door_block_activation_crystal_trigger_1");
         yield return new WaitForSeconds(0.5f);
         this.GetComponent<Animator>().Play("Door_block_activation_crystal_1");
+        this.GetComponent<Animator>().Play("Door_block_activation_crystal_trigger_after_1");
+
         startTime = Time.time;
         startActivation = true;
     }

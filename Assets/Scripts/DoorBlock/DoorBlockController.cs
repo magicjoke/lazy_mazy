@@ -46,8 +46,8 @@ public class DoorBlockController : MonoBehaviour
         this.GetComponent<Animator>().Play("Door_block_vertical_opening_1");
         yield return new WaitForSeconds(0.5f);
         this.GetComponent<BoxCollider2D>().enabled = false;
-        this.GetComponent<Animator>().Play("Door_block_vertical_light_start_1");
-        yield return new WaitForSeconds(0.4f);
-        this.GetComponent<Animator>().Play("Door_block_vertical_light_end_1");
+        this.GetComponent<Animator>().Play("Door_block_vertical_opened_1");
+        //yield return new WaitForSeconds(0.4f);
+        //this.GetComponent<Animator>().Play("Door_block_vertical_light_end_1");
     }
 }

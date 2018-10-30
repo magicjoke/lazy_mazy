@@ -420,21 +420,19 @@ public class PlayerController : MonoBehaviour {
             shake.CamShake();
             StartCoroutine(CharacterDeath());
         }
-        //if (collision.gameObject.tag == "CrushJump" && verticalVelocity < -3)
-        //{
-        //    Debug.Log("JumpCrush");
-
-        //}
+        if(collision.gameObject.tag == "MovingBlock")
+        {
+            transform.parent = collision.transform;
+        }
     }
 
-    //void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if(collision.gameObject.tag == "CrushJump")
-    //    {
-    //        Debug.Log("CollExit");
-
-    //    }
-    //}
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "MovingBlock")
+        {
+            transform.parent = null;
+        }
+    }
 
     IEnumerator ChangeLevel()
     {
@@ -445,6 +443,7 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator CharacterDeath()
     {
+        transform.parent = null;
         canControl = false;
         deadFreeze = true;
         GetComponent<Animator>().Play("Death_1");
@@ -455,6 +454,7 @@ public class PlayerController : MonoBehaviour {
 
     IEnumerator CharacterWaterDeath()
     {
+        transform.parent = null;
         canControl = false;
         deadFreeze = true;
         GetComponent<Animator>().Play("Water_death_1");

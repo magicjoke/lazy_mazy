@@ -37,6 +37,7 @@ TagManager:
   - CrushJump
   - MoveLeftZone
   - StopMoveZone
+  - MovingBlock
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class PlayerSphereController : MonoBehaviour {
     private GameObject player;
     private GameObject respawn;
     private bool isAlive = false;
-    private float sphereSpeed = 1f;
+    //private float sphereSpeed = 1f;
     private const float minDistance = 0.1f;
 
     public float duration = 5.0F;

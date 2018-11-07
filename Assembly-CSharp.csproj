@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ChildScript.cs" />
+    <Compile Include="Assets\Scripts\CoinController.cs" />
     <Compile Include="Assets\Scripts\CrushJumpBlock.cs" />
     <Compile Include="Assets\Scripts\Crystal\CrystalController.cs" />
     <Compile Include="Assets\Scripts\Crystal\CrystalMover.cs" />
@@ -85,6 +86,8 @@
     <Compile Include="Assets\Scripts\ShootBlock\BulletController.cs" />
     <Compile Include="Assets\Scripts\ShootBlock\ShootingBlock.cs" />
     <Compile Include="Assets\Scripts\TeleportBlock\TelepotBlockController.cs" />
+    <Compile Include="Assets\Scripts\Water\FishController.cs" />
+    <Compile Include="Assets\Scripts\Water\WaterController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>E:/Unity/Unity 2018/Projects/Lazy_Mazy_2018.3/lazy_mazy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

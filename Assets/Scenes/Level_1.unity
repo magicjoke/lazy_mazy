@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: nextLevel
-      value: Title_screen
+      value: Level_2
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: playerSphere
@@ -161,6 +161,10 @@ PrefabInstance:
       objectReference: {fileID: 1204531388228980, guid: 0ca6facfc017ac341a13e7b1e4d9e272, type: 3}
     - target: {fileID: 1128547858530502, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
+      propertyPath: startMoveSide
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:

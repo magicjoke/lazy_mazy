@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
 
     private GameObject player;
     private GameObject respawn;
+    private GameObject levelManager;
 
     private GameObject moveRightZone;
     private GameObject stopMoveRightZone;
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour {
     public float verticalVelocity;
 
 
-    public int score;
+    public int Coin;
     public int deathCount;
 
     Rigidbody2D rb;
@@ -87,6 +88,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         sr = GetComponent<SpriteRenderer>();
+        Coin = PlayerPrefs.GetInt("Coin");
     }
 
     void Start()
@@ -170,6 +172,12 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update () {
+
+        // -- Score Things --//
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
+        // -- End Score Things --//
+
+
 
         verticalVelocity = rb.velocity.y;
 
@@ -358,10 +366,11 @@ public class PlayerController : MonoBehaviour {
            // rb.velocity = new Vector2(0, 0);
             rb.AddForce(Vector2.left * 2000);
         }
-        if (other.gameObject.tag == "Score")
+        if (other.gameObject.tag == "Coin")
         {
             Destroy(other.gameObject);
-            score++;
+            Coin++;
+            PlayerPrefs.SetInt("Coin", Coin);
         }
         if (other.gameObject.tag == "LiftUp")
         {

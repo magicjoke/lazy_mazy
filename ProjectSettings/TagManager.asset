@@ -9,9 +9,7 @@ TagManager:
   - Exit
   - RespawnPoint
   - JumpBooster
-  - Score
   - StickyWall
-  - LiftUp
   - Boost
   - Blue_door
   - Blue_door_light
@@ -38,6 +36,8 @@ TagManager:
   - MoveLeftZone
   - StopMoveZone
   - MovingBlock
+  - Coin
+  - LevelManager
   layers:
   - Default
   - TransparentFX

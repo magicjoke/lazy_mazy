@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: nextLevel
-      value: Level_5
+      value: Title_screen
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: startMoveSide

@@ -56,6 +56,11 @@ public class PlayerController : MonoBehaviour {
     public bool stickJump;
 
     //--test--//
+    public string currentSceneName;
+    Scene currentScene;
+    public bool characterActivation;
+    private bool charActivateOnce;
+    //public GameObject coinPickupParticle;
 
     public bool startMoveSide;
 
@@ -93,7 +98,19 @@ public class PlayerController : MonoBehaviour {
 
     void Start()
     {
-        if(startMoveSide == true)
+
+        //player.GetComponent<SpriteRenderer>().sortingOrder = 5;
+
+        charActivateOnce = true;
+
+        if (currentSceneName == "First_level")
+        {
+            canControl = false;
+            deadFreeze = true;
+        }
+
+
+        if (startMoveSide == true)
         {
             canControl = false;
             curSpeed = 2f;
@@ -176,7 +193,8 @@ public class PlayerController : MonoBehaviour {
         // -- Score Things --//
         levelManager = GameObject.FindGameObjectWithTag("LevelManager");
         // -- End Score Things --//
-
+        currentScene = SceneManager.GetActiveScene();
+        currentSceneName = currentScene.name;
 
 
         verticalVelocity = rb.velocity.y;
@@ -286,6 +304,20 @@ public class PlayerController : MonoBehaviour {
             Debug.Log("StickyJumpTrue");
         }
 
+
+        if (currentSceneName == "First_level" && canControl == false && deadFreeze == true && charActivateOnce == true)
+        {
+            if (characterActivation == false)
+            {
+                player.GetComponent<Animator>().Play("Disabled_1");
+            }
+            if (characterActivation == true)
+            {
+                StartCoroutine(CharActivation());
+            }
+
+        }
+
         //if (player.GetComponent<Rigidbody2D>().velocity.y < -0.3 && isGrounded == false)
         //{
         //    GetComponent<Animator>().Play("Falling_1");
@@ -371,6 +403,8 @@ public class PlayerController : MonoBehaviour {
             Destroy(other.gameObject);
             Coin++;
             PlayerPrefs.SetInt("Coin", Coin);
+            //GameObject instance = (GameObject)Instantiate(coinPickupParticle, other.transform.position, Quaternion.identity);
+            //Destroy(instance, 1.5f);
         }
         if (other.gameObject.tag == "LiftUp")
         {
@@ -485,5 +519,17 @@ public class PlayerController : MonoBehaviour {
         //canDie = true;
         deathCount++;
     }
+
+    IEnumerator CharActivation()
+    {
+        charActivateOnce = false;
+        player.GetComponent<Animator>().Play("Activation_1");
+        yield return new WaitForSeconds(1.5f);
+        player.GetComponent<Animator>().Play("Standup_1");
+        yield return new WaitForSeconds(1f);
+        canControl = true;
+        deadFreeze = false;
+    }
+
 
 }

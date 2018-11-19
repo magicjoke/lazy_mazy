@@ -169,12 +169,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: nextLevel
-      value: Level_0
+      value: Level_4
       objectReference: {fileID: 0}
     - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
       propertyPath: playerSphere
       value: 
       objectReference: {fileID: 1204531388228980, guid: 0ca6facfc017ac341a13e7b1e4d9e272, type: 3}
+    - target: {fileID: 114145356556952812, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
+      propertyPath: startMoveSide
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74a228eab765bf34eb376a7981fd765a, type: 3}
 --- !u!1001 &457159453
@@ -345,6 +349,18 @@ PrefabInstance:
     - target: {fileID: 8080798219405061229, guid: 1a91c23dc274d9941bb2da3f674037ac, type: 3}
       propertyPath: m_Name
       value: Doors
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082286144056042724, guid: 1a91c23dc274d9941bb2da3f674037ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9082286144056042724, guid: 1a91c23dc274d9941bb2da3f674037ac, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8083050037613773851, guid: 1a91c23dc274d9941bb2da3f674037ac, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a91c23dc274d9941bb2da3f674037ac, type: 3}

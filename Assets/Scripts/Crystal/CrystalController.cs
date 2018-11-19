@@ -23,6 +23,8 @@ public class CrystalController : MonoBehaviour
     private GameObject redLight;
 
     public GameObject crystal;
+    public GameObject crystalParticle;
+    public GameObject crystalParticleAfter;
 
     private string sceneName;
 
@@ -77,6 +79,9 @@ public class CrystalController : MonoBehaviour
         {
             GetComponent<Animator>().Play("Crystal_empty_1");
             Instantiate(crystal, new Vector3(this.transform.position.x, this.transform.position.y), Quaternion.identity);
+            GameObject instance = (GameObject)Instantiate(crystalParticleAfter, this.transform.position, Quaternion.identity);
+            Destroy(instance, 1.5f);
+            Destroy(crystalParticle);
             createdOnce = true;
         }
     }

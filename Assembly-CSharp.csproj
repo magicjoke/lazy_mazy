@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ActivationSphere.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraShake.cs" />
     <Compile Include="Assets\Scripts\ChildScript.cs" />
     <Compile Include="Assets\Scripts\CoinController.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="Assets\Scripts\ShootBlock\BulletController.cs" />
     <Compile Include="Assets\Scripts\ShootBlock\ShootingBlock.cs" />
     <Compile Include="Assets\Scripts\TeleportBlock\TelepotBlockController.cs" />
+    <Compile Include="Assets\Scripts\UIText.cs" />
     <Compile Include="Assets\Scripts\Water\FishController.cs" />
     <Compile Include="Assets\Scripts\Water\WaterController.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">

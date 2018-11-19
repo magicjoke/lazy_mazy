@@ -10,11 +10,13 @@ public class SignController : MonoBehaviour
     private Image sign;
     private Text text;
 
-    public bool RU_ENG = false;
+    //public bool RU_ENG = false;
 
     public string signText;
     public string signTextRU;
     private float fadingSpeed = 1f;
+
+    private GameObject levelManager;
 
 
     private void Start()
@@ -24,6 +26,7 @@ public class SignController : MonoBehaviour
 
         sign = GameObject.FindGameObjectWithTag("Sign").GetComponent<Image>();
         text = GameObject.FindGameObjectWithTag("SignText").GetComponent<Text>();
+        levelManager = GameObject.FindGameObjectWithTag("LevelManager");
 
         //sign = Image.FindObject
     }
@@ -43,7 +46,7 @@ public class SignController : MonoBehaviour
             StartCoroutine(FadingPause());
 
             //text.GetComponent<Text>().text = signText;
-            if(RU_ENG == false)
+            if(levelManager.GetComponent<LevelManager>().RU_ENG == false)
             {
                 text.text = signText;
             } else

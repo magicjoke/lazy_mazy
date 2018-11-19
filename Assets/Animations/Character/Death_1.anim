@@ -3,8 +3,9 @@
 --- !u!74 &7400000
 AnimationClip:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Death_1
   serializedVersion: 6
   m_Legacy: 0
@@ -32,6 +33,10 @@ AnimationClip:
       value: {fileID: 21300000, guid: a074abc81d4a400469658613a7c4b2aa, type: 3}
     - time: 0.5
       value: {fileID: 21300000, guid: aa95ff168cabce840b2fc201bdac94fb, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: c57275288a1849e4ea0c118e709a7e8f, type: 3}
+    - time: 0.6666667
+      value: {fileID: 0}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -58,12 +63,14 @@ AnimationClip:
     - {fileID: 21300000, guid: 7cc7bd1081e24894d9fc3a63d1cdf3a6, type: 3}
     - {fileID: 21300000, guid: a074abc81d4a400469658613a7c4b2aa, type: 3}
     - {fileID: 21300000, guid: aa95ff168cabce840b2fc201bdac94fb, type: 3}
+    - {fileID: 21300000, guid: c57275288a1849e4ea0c118e709a7e8f, type: 3}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5833333
+    m_StopTime: 0.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,5 +89,4 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_GenerateMotionCurves: 0
   m_Events: []

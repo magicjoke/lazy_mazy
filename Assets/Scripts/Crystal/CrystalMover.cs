@@ -8,7 +8,7 @@ public class CrystalMover : MonoBehaviour {
     private GameObject crystalFinish;
     public bool isAlive = false;
     private bool transferDone = false;
-    private const float minDistance = 0.07f;
+    private const float minDistance = 0.05f;
 
     public float startMoveTime = 2f;
     public float moveDuration = 40f;

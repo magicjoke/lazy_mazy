@@ -8,6 +8,11 @@ public class FireFly : MonoBehaviour
     private float waitTime;
     public float startWaitTime;
 
+    public GameObject echo;
+    public float timeBtwSpawns;
+    public float startTimeBtwSpawns;
+
+
     public Transform moveSpot;
 
     private int randomSpot;
@@ -22,11 +27,24 @@ public class FireFly : MonoBehaviour
         waitTime = startWaitTime;
 
         moveSpot.position = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), Random.Range(minZ, maxZ));
+
     }
+
 
     void Update(){
 
-        transform.position = Vector3.MoveTowards(transform.position, moveSpot.position, speed * Time.deltaTime);
+        if (timeBtwSpawns <= 0)
+        {
+            GameObject instance = (GameObject)Instantiate(echo, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+            timeBtwSpawns = startTimeBtwSpawns;
+        }
+        else
+        {
+            timeBtwSpawns -= Time.deltaTime;
+        }
+
+        transform.position = Vector3.Slerp(transform.position, moveSpot.transform.position, Mathf.SmoothStep(0f, 0.5f, speed));//Vector3.MoveTowards(transform.position, moveSpot.position, speed * Time.deltaTime);
 
         if (Vector2.Distance(transform.position, moveSpot.position) < 0.2f){
             if(waitTime <= 0){

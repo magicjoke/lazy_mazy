@@ -13,6 +13,12 @@ public class PlayerSphereController : MonoBehaviour {
     public float duration = 5.0F;
     private float startTime;
 
+
+    // new echo
+    public GameObject echo;
+    public float timeBtwSpawns;
+    public float startTimeBtwSpawns;
+
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -27,6 +33,19 @@ public class PlayerSphereController : MonoBehaviour {
 
     void Update()
     {
+
+        if (timeBtwSpawns <= 0)
+        {
+            GameObject instance = (GameObject)Instantiate(echo, transform.position, Quaternion.identity);
+            Destroy(instance, 1f);
+            timeBtwSpawns = startTimeBtwSpawns;
+        }
+        else
+        {
+            timeBtwSpawns -= Time.deltaTime;
+        }
+
+
         float t = (Time.time - startTime) / duration;
 
         if (isAlive == true)

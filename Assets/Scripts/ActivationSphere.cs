@@ -9,6 +9,8 @@ public class ActivationSphere : MonoBehaviour
 
     private GameObject player;
 
+    public GameObject image;
+
     public GameObject whatToActivate;
 
     private const float minDistance = 0.05f;
@@ -17,7 +19,6 @@ public class ActivationSphere : MonoBehaviour
 
     void Start()
     {
-        startTime = Time.time;
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
@@ -30,6 +31,7 @@ public class ActivationSphere : MonoBehaviour
         if (isActive == true)
         {
             this.transform.position = Vector3.Lerp(transform.position, whatToActivate.transform.position, Mathf.SmoothStep(0f, 0.5f, t));
+            Destroy(image);
         }
 
         if ((this.gameObject.transform.position - whatToActivate.transform.position).sqrMagnitude <= minDistance * minDistance)
@@ -41,6 +43,7 @@ public class ActivationSphere : MonoBehaviour
 
     public void ActivateSphere()
     {
+        startTime = Time.time;
         isActive = true;
     }
 }
